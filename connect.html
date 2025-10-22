@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The direction of graphic design</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/brush.png" type="image/png">
+</head>
+<body>
+    <main data-barba="wrapper">
+        <div class="box"></div>
+        <div data-barba="container" data-barba-namespace="connect">
+        <div class="anim1">
+    <header class="container">
+    <span class="logo">Design<img src="img/brush.png" alt=""></span>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="created.html">Происхождение сайта</a></li>
+                <li class="btn"><a href="connect.html">Связь</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container hero-connect">
+        <h1>Свяжитесь с создателем в любой точке мира.</h1>
+        <p>Вы можете отправить свое сообщение создателю сайта.</p>
+        <img src="img/Map.png" alt="">
+    </div>
+
+    <div class="feedback">
+        <div class="container">
+            <h2>Связь с разработчиком</h2>
+            <p>Заплоните форму и отправьте свое сообщение.</p>
+
+            <form>
+                <div class="inline">
+                    <div>
+                        <label>Имя</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label>Фамилия</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <label>Адрес электронной почты</label>
+                <input type="email" class="one-line" id="emailField">
+
+                <label>Сообщение</label>
+                <textarea class="one-line"></textarea>
+                <button type="button" onclick="checkEmail()">Отправить</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+    <div class="blocks container">
+        <div>
+            <span class="logo">Design <img src="img/brush.png" alt=""></span>
+            <p>Направления графического дизайна</p>
+        </div>
+        <div>
+            <h4>Создатель</h4>
+            <ul>
+                <li>Ломакин Константин Дмитриевич</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Связаться со мной</h4>
+            <ul>
+                <li>+7 (950) 068-64-01</li>
+                <li>lomakinkosta89@gmail.com</li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <p>19.10.2025</p>
+    </footer>
+    <div class="btnTop"><img src="img/ArrowUp.png" alt=""></div>
+        </div>
+        </div>
+    </main>
+    <script>
+        function checkEmail() {
+            let email = document.querySelector('#emailField').value;
+            if(!email.includes('@')) alert('Нет символа "@"')
+            else if(!email.includes('.')) alert('Нет символа "."')
+            else alert('Отправлено!');
+        }  
+                const goTopBtn = document.querySelector(".btnTop")
+        goTopBtn.addEventListener("click", goTop)
+        window.addEventListener("scroll", trackScroll)
+        function trackScroll() {
+            const offset = window.pageYOffset;
+            const coords = document.documentElement.clientHeight;
+            if (offset > coords) {
+                goTopBtn.classList.add("btnTop--show")
+            }
+            else {
+                goTopBtn.classList.remove("btnTop--show")
+            }
+        }
+        function goTop() {
+            if (window.pageYOffset > 0) {
+                window.scrollBy(0, -75);
+                setTimeout(goTop,0)
+            }
+        }
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="animation.js"></script>
+
+</body>
+ 
+</html>
